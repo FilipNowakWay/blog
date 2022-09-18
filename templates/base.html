@@ -1,19 +1,24 @@
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <title>Django Blog</title>
-</head>
-<body>
-    <header>
-        <h1><a href="{% url "home" %}">Django Blog</a></h1>
-    </header>
-    <div>
-        {% block content %}
-        {% endblock content %}
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <title>Django Blog</title>
+    </head>
+    <body>
+        <div>
+            <header>
+                <div class="nav-left">
+                    <h1><a href="{% url 'home' %}">Django Blog</a></h1>
+                </div>
+                <div class="nav-right">
+                    <a href="{% url 'post_new' %}">+ New Blog Post</a>
+                </div>
+            </header>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
 </html>
